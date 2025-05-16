@@ -2,6 +2,7 @@
   <div class="home-page">
     <AppHeader />
     <AppMain backgroundImage="/images/image1.png" />
+    <AppFooter />
   </div>
 </template>
 

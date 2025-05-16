@@ -7,6 +7,7 @@ import { Link } from '@inertiajs/vue3'; // Импортируем Link вмес�
 // Импорт компонентов
 import AppHeader from './Pages/Header.vue';
 import AppMain from './Pages/Main.vue';
+import AppFooter from './Pages/Footer.vue';
 
 createInertiaApp({
   resolve: name => import(`./Pages/${name}.vue`),
@@ -18,6 +19,7 @@ createInertiaApp({
     // Регистрируем компоненты глобально
     app.component('AppHeader', AppHeader);
     app.component('AppMain', AppMain);
+    app.component('AppFooter', AppFooter);
     app.component('Link', Link); // Регистрируем Link для использования вместо router-link
     
     app.use(plugin);

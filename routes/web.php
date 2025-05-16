@@ -8,9 +8,10 @@ use Inertia\Inertia;
 // Главная страница — твоя кастомная Home.vue
 Route::get('/', function () {
 return Inertia::render('Home');
-
 });
-
+Route::get('/search', function () {
+    return Inertia::render('Search');
+    });
 // Страница dashboard — доступна только авторизованным и подтверждённым
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -1,20 +1,18 @@
-<template>
-    <header class="main-header">
-      <div class="header-content">
-        <div class="logo">Sweet Home</div>
-        
-        <nav class="nav-links">
-          <Link href="/">Главная</Link>
-          <Link href="/search">Поиск</Link>
-          <Link href="/contacts">Контакты</Link>
-        </nav>
-        
-        <div class="auth-links">
-          <Link href="/login" class="auth-link">Вход</Link>
-          <Link href="/register" class="auth-link register-link">Регистрация</Link>
-        </div>
+
+  
+  <template>
+    <nav class="navigation-bar">
+      <div class="nav-menu">
+        <h1 class="logo">Sweet<br />Home</h1>
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/search" class="nav-link">Поиск</a>
+        <a href="/contacts" class="nav-link">Контакты</a>
       </div>
-    </header>
+      <div class="auth-buttons">
+        <button class="auth-button">Вход</button>
+        <button class="auth-button">Регистрация</button>
+      </div>
+    </nav>
   </template>
   
   <script>
@@ -24,73 +22,81 @@
   </script>
   
   <style scoped>
-  .main-header {
-    width: 100%;
+  .navigation-bar {
+    font-family: 'Rubik';
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 21%;
+    width: 1120px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
     display: flex;
-    justify-content: center;
-    padding: 15px 0;
+    padding: 10px 22px;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   
-  .header-content {
-    width: 1120px;
-    height: 70px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  .nav-menu {
     display: flex;
-    align-items: center;
-    padding: 0 30px;
+    margin: auto 0;
+    align-items: stretch;
+    gap: 30px;
   }
   
   .logo {
-    font-family: 'Rubik', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    margin-right: auto;
+    color: rgba(172, 224, 0, 1);
+    font-weight: 800;
+    line-height: 13px;
+    margin: 0;
   }
   
-  .nav-links {
-    display: flex;
-    gap: 40px;
-    margin-right: auto;
-  }
-  
-  .nav-links a {
-    font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    color: #333;
+  .nav-link {
     text-decoration: none;
-    transition: color 0.3s;
+    color: inherit;
   }
   
-  .nav-links a:hover {
-    color: #ACE000;
-  }
-  
-  .auth-links {
+  .auth-buttons {
     display: flex;
-    gap: 15px;
+    align-items: stretch;
+    gap: 25px;
   }
   
-  .auth-link {
-    font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    color: #ACE000;
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid #ACE000;
-    border-radius: 20px;
-    transition: all 0.3s;
+  .auth-button {
+    border-radius: 15px;
+    background-color: rgba(172, 224, 0, 1);
+    padding: 16px 32px;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    cursor: pointer;
   }
   
-  .register-link {
-    background-color: #ACE000;
-    color: white !important;
+  .auth-button:last-child {
+    padding: 16px 27px;
   }
   
-  .auth-link:hover {
-    background-color: #ACE000;
-    color: white;
+  @media (max-width: 991px) {
+    .navigation-bar {
+      padding: 10px 20px;
+      white-space: initial;
+    }
+  
+    .nav-menu {
+      white-space: initial;
+    }
+  
+    .auth-buttons {
+      white-space: initial;
+    }
+  
+    .auth-button {
+      padding: 16px 20px;
+    }
   }
   </style>
+  
