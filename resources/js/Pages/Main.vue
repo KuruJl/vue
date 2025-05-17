@@ -43,14 +43,15 @@ export default {
             <input type="text" class="search-input" placeholder="от и до">
           </div>
           <div class="divider"></div>
-        </div>
-        <div class="search-group">
-          <div>
+          <div class="search-field">
             <label class="search-label">кол-во комнат</label>
             <input type="text" class="search-input" placeholder="Любое">
           </div>
           <div class="divider"></div>
         </div>
+        
+          
+        
         <div class="search-actions">
           <div class="date-input">дата</div>
           <button class="search-button">Поиск</button>
@@ -71,6 +72,7 @@ export default {
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
+
 .main-section {
   font-family: 'Rubik';
   width: 1120px;
@@ -122,7 +124,7 @@ export default {
 }
 
 .search-container {
-  width: 660px;
+  width: 570px;
   position: relative;
   border-radius: 10px;
   background-color: #fff;
@@ -137,6 +139,7 @@ export default {
 }
 
 .search-group {
+  
   display: flex;
   align-items: stretch;
   gap: 6px;
@@ -161,10 +164,14 @@ export default {
   width: 90px;
   height: 35px;
   /* Добавлены стили для input */
-  border: none; /* Убираем стандартную рамку input */
-  padding: 0 10px; /* Добавляем внутренние отступы для текста */
-  font-size: 14px; /* Подбираем размер шрифта */
-  box-sizing: border-box; /* Включаем padding и border в размер элемента */
+  border: none;
+  /* Убираем стандартную рамку input */
+  padding: 0 10px;
+  /* Добавляем внутренние отступы для текста */
+  font-size: 14px;
+  /* Подбираем размер шрифта */
+  box-sizing: border-box;
+  /* Включаем padding и border в размер элемента */
 }
 
 .divider {
@@ -190,7 +197,6 @@ export default {
   padding: 11px 32px;
   font-size: 12px;
   font-weight: 400;
-  /* Если это placeholder для даты, возможно стоит заменить на input type="date" */
 }
 
 .search-button {

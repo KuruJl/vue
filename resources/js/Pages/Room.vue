@@ -1,21 +1,20 @@
 <template>
     <div class="home-page">
       <AppHeader />
-      <AppSearchForm /> 
-      <AppSearchField backgroundImage="/images/image2.png" />
+      <AppRoom1 />
       <AppFooter />
     </div>
   </template>
-
+  
   <script setup>
   import AppHeader from './Header.vue';
-  import AppSearchForm from './SearchForm.vue';
-  import AppSearchField from './SearchField.vue';
+  import AppRoom1 from './Room1.vue';
   import AppFooter from './Footer.vue';
   </script>
-  <script>
+  
+  <script >
   export default {
-    name: 'Search'
+    name: 'Room'
   }
   </script>
   

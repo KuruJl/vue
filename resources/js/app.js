@@ -2,25 +2,22 @@ import '../css/app.css';
 import './bootstrap';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { createApp, h } from 'vue';
-import { Link } from '@inertiajs/vue3'; // Импортируем Link вместо router-link
+import { Link } from '@inertiajs/vue3';
 
-// Импорт компонентов
-import AppHeader from './Pages/Header.vue';
-import AppMain from './Pages/Main.vue';
-import AppFooter from './Pages/Footer.vue';
+// После создания app
 
 createInertiaApp({
-  resolve: name => import(`./Pages/${name}.vue`),
+  resolve: async (name) => {
+    const page = await import(`./Pages/${name}.vue`);
+    return page;
+  },
   setup({ el, App, props, plugin }) {
     const app = createApp({
       render: () => h(App, props)
     });
     
-    // Регистрируем компоненты глобально
-    app.component('AppHeader', AppHeader);
-    app.component('AppMain', AppMain);
-    app.component('AppFooter', AppFooter);
-    app.component('Link', Link); // Регистрируем Link для использования вместо router-link
+    // Регистрируем только Link (остальные компоненты импортируем локально)
+    app.component('Link', Link);
     
     app.use(plugin);
     app.mount(el);

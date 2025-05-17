@@ -24,10 +24,9 @@
   <style scoped>
   .navigation-bar {
     font-family: 'Rubik';
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 21%;
-    width: 1120px;
+    margin: 20px auto; /* Автоматические отступы по бокам для центрирования */
+    max-width: 1120px; /* Максимальная ширина */
+    width: 80%; /* Гибкая ширина, например 80% от родителя */
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(0, 0, 0, 1);
@@ -37,7 +36,7 @@
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+}
   
   .nav-menu {
     display: flex;

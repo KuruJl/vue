@@ -9,10 +9,10 @@
           <div class="footer-nav-content">
             <h3 class="footer-heading">Съемщику</h3>
             <nav class="footer-links">
-              <a href="#" class="footer-link">Главная</a>
-              <a href="#" class="footer-link">Поиск</a>
+              <a href="/" class="footer-link">Главная</a>
+              <a href="/search" class="footer-link">Поиск</a>
               <a href="#" class="footer-link">Контакты</a>
-              <a href="#" class="footer-link">Профиль</a>
+              <a href="/profilee" class="footer-link">Профиль</a>
             </nav>
           </div>
         </div>
@@ -21,8 +21,8 @@
           <div class="footer-landlord-content">
             <h3 class="footer-heading">Арендодателю</h3>
             <nav class="footer-links">
-              <a href="#" class="footer-link">Профиль</a>
-              <a href="#" class="footer-link">Разместить объявление</a>
+                <a href="/profilee" class="btn">Профиль</a>
+                <a href="#" class="footer-link">Разместить объявление</a>
             </nav>
           </div>
         </div>
@@ -30,6 +30,8 @@
     </footer>
   </template>
   
+
+
   <script>
   export default {
     name: 'AppFooter'
@@ -39,17 +41,16 @@
   <style scoped>
   .footer {
     font-family: 'Rubik';
-    margin-bottom: 20px;
-    margin-left: 21%;
+    margin: 20px auto;  /* Центрирование */
+    max-width: 1120px;  /* Максимальная ширина */
+    width: 80%;         /* Гибкая ширина (80% от родителя) */
     border-radius: 15px;
     background-color: #fff;
     border: 1px solid #000;
-    margin-top: 20px;
     padding: 25px 80px 25px 25px;
-    width: 1120px;
     height: 190px;
     box-sizing: border-box;
-  }
+}
   
   .footer-content {
     gap: 20px;
