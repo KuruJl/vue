@@ -2,21 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class CalendarEvent extends Model
+class Booking extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'listing_id',
         'user_id',
-        'plant_id',
-        'title',
-        'description',
         'start_date',
         'end_date',
-        'event_type'
+        'total_price',
+        'status',
     ];
 
     public function user()
@@ -24,8 +23,8 @@ class CalendarEvent extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function plant()
+    public function listing()
     {
-        return $this->belongsTo(Plant::class);
+        return $this->belongsTo(Listing::class);
     }
 }

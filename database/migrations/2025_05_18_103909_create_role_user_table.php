@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('tips', function (Blueprint $table) {
-    $table->id();
-    $table->string('title');
-    $table->text('content');
-    $table->string('plant_species')->nullable();
-    $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
-    $table->timestamps();
-});
+        Schema::create('role_user', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('role_id')->constrained()->onDelete('cascade');
+            $table->primary(['user_id', 'role_id']);
+        });
+        
     }
 
     /**
@@ -26,6 +24,6 @@ Schema::create('tips', function (Blueprint $table) {
      */
     public function down(): void
     {
-        Schema::dropIfExists('tips');
+        Schema::dropIfExists('role_user');
     }
 };

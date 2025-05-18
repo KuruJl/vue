@@ -1,25 +1,28 @@
 import '../css/app.css';
 import './bootstrap';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import { createInertiaApp } from '@inertiajs/vue3';
 import { createApp, h } from 'vue';
 import { Link } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
-// После создания app
+
 
 createInertiaApp({
-  resolve: async (name) => {
-    const page = await import(`./Pages/${name}.vue`);
-    return page;
+  resolve: (name) => {
+    // Используем встроенный помощник Laravel Vite для автоматического разрешения путей
+    return resolvePageComponent(
+      `./Pages/${name}.vue`,
+      import.meta.glob('./Pages/**/*.vue')
+    );
   },
   setup({ el, App, props, plugin }) {
-    const app = createApp({
-      render: () => h(App, props)
-    });
-    
-    // Регистрируем только Link (остальные компоненты импортируем локально)
-    app.component('Link', Link);
-    
-    app.use(plugin);
-    app.mount(el);
-  }
+    return createApp({ render: () => h(App, props) })
+      .use(plugin)
+      .component('Link', Link)
+      .mount(el);
+  },
+  progress: {
+    color: '#4B5563',
+    showSpinner: true,
+  },
 });
